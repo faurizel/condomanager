@@ -9,8 +9,8 @@ COPY gradle gradle
 COPY build.gradle.kts .
 COPY settings.gradle.kts .
 
-RUN chmod +x gradlew
-
+# Dá permissão de execução ao Gradle Wrapper
+RUN chmod +x ./gradlew
 # Baixa dependências
 RUN ./gradlew dependencies --no-daemon || true
 
